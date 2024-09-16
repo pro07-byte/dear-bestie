@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dear Bestfriend</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #f0e68c;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #FF6347;
+      animation: textBounce 1s infinite;
+    }
+
+    @keyframes textBounce {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    .buttons {
+      margin-top: 50px;
+    }
+
+    .button {
+      font-size: 1.5em;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .yes {
+      background-color: #4CAF50;
+      color: white;
+      box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    }
+
+    .yes:hover {
+      background-color: #45a049;
+    }
+
+    .no {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+    }
+
+    #thankYouMessage {
+      font-size: 2em;
+      display: none;
+      margin-top: 20px;
+      color: #FF6347;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    #emoji {
+      font-size: 5em;
+      display: none;
+      animation: smile 2s infinite;
+    }
+
+    @keyframes smile {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .floating-emoji {
+      position: absolute;
+      font-size: 2em;
+      opacity: 0.8;
+      animation: floatUp 5s infinite ease-in-out;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 0.8; }
+      50% { transform: translateY(-200px); opacity: 0.5; }
+      100% { transform: translateY(0); opacity: 0.8; }
+    }
+
+    /* Random placement of emojis */
+    .emoji1 { left: 10%; animation-delay: 0s; }
+    .emoji2 { left: 30%; animation-delay: 1s; }
+    .emoji3 { left: 50%; animation-delay: 2s; }
+    .emoji4 { left: 70%; animation-delay: 3s; }
+    .emoji5 { left: 90%; animation-delay: 4s; }
+  </style>
+</head>
+<body>
+
+  <h1>Dear Bestfriend, ladki pata ke degi ??</h1>
+
+  <div class="buttons">
+    <button class="button yes" onclick="sayYes()">YES</button>
+    <button class="button no" id="noButton" onclick="sayNo()">NO</button>
+  </div>
+
+  <div id="thankYouMessage">Thank You Bandariya, Tere jaisi Bestie sabko mile 😁</div>
+  <div id="emoji">😁</div>
+
+  <!-- Floating emojis -->
+  <div class="floating-emoji emoji1">🥹</div>
+  <div class="floating-emoji emoji2">🥹</div>
+  <div class="floating-emoji emoji3">🥹</div>
+  <div class="floating-emoji emoji4">🥹</div>
+  <div class="floating-emoji emoji5">🥹</div>
+
+  <script>
+    function sayYes() {
+      document.getElementById('thankYouMessage').style.display = 'block';
+      document.getElementById('emoji').style.display = 'block';
+      document.getElementById('noButton').style.display = 'none'; // Hide "NO" button after clicking YES
+    }
+
+    function sayNo() {
+      let noButton = document.getElementById('noButton');
+      noButton.style.top = Math.random() * (window.innerHeight - noButton.offsetHeight) + 'px';
+      noButton.style.left = Math.random() * (window.innerWidth - noButton.offsetWidth) + 'px';
+    }
+  </script>
+
+</body>
+</html>
